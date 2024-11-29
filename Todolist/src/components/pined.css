@@ -1,0 +1,25 @@
+.pined{
+     margin: 0;
+     padding: 0;
+width: 90%;
+min-height: 13vh;
+text-align: left;
+display: flex;
+flex-direction: column;
+border-bottom: #373a3d solid 3px;
+margin-bottom: 10px;
+
+}
+.pined .pinimg {
+     width: 30px;
+     height: 30px;
+     margin-right: -20px;
+}
+.pindcontent{
+     display: flex;
+     flex-direction: row;
+   
+     font-size: 27px;
+     font-weight: bolder;
+     color: #c5d2e4;
+}

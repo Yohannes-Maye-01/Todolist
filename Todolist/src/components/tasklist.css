@@ -1,0 +1,58 @@
+.tasklist {
+     text-align: left;
+     margin-bottom: 20px;
+     
+   }
+   
+.custom-checkbox {
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+     font-family: Arial, sans-serif;
+     font-size: 20px;
+     color: #c5d2e4;
+     gap:25px;
+     margin-left: 30px;
+   }
+   
+ 
+   .custom-checkbox input[type="checkbox"] {
+     display: none;
+   }
+   
+
+   .custom-checkbox .checkmark {
+     width: 30px; /* Increased width */
+     height: 30px; /* Increased height */
+     background-color: #fff;
+     border: 3px solid #484f59; /* Adjusted border size */
+     border-radius: 8px; /* Optional for rounded corners */
+     position: relative;
+     transition: all 0.3s ease;
+   }
+   
+   /* Checkbox State (Checked) */
+   .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+     background-color: #484f59;
+     border-color: #484f59;
+   }
+   
+   /* Add Checkmark Icon */
+   .custom-checkbox .checkmark::after {
+     content: "";
+     position: absolute;
+     width: 7px; /* Adjusted size of checkmark */
+     height: 15px;
+     border: solid #fff;
+     border-width: 0px 4px 3px 0px; /* Adjusted thickness */
+     transform: rotate(0deg) scale(0);
+     top: 7px; /* Adjust positioning */
+     left: 9px;
+     transition: transform 0.3s ease;
+   }
+   
+   
+   .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+     transform: rotate(45deg) scale(1);
+   }
+   

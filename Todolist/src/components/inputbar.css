@@ -1,0 +1,11 @@
+.inputBar{
+    width: 100%; 
+    height: 10vh;
+   
+} 
+.inputBar .inputtask{
+width: 80%; 
+height: 80%;
+font-size: larger;
+padding-left: 60px;
+}
