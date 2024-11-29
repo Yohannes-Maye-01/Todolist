@@ -1,0 +1,52 @@
+/* Context Area Styling */
+.context-area {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+   }
+   
+   /* Context Menu Styling */
+   .context-menu {
+     position: absolute;
+     background-color: white;
+     border-radius: 4px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     width: 140px;
+     font-family: Arial, sans-serif;
+     font-size: 14px;
+     z-index: 1000;
+     color: #333;
+     border: 1px solid #d9d9d9;
+   }
+   
+   /* Context Menu Item Styling */
+   .context-menu li {
+     padding: 10px 15px;
+     cursor: pointer;
+     border-bottom: 1px solid #f0f0f0;
+   }
+   
+   .context-menu li:last-child {
+     border-bottom: none;
+   }
+   
+   /* Hover Effect */
+   .context-menu li:hover {
+     background-color: #f2f2f2;
+   }
+   
+   /* Highlighted Item (e.g., Copy) */
+   .context-menu .highlight {
+     background-color: #e6f7ff;
+     color: #1890ff;
+     font-weight: bold;
+   }
+   
+   .context-menu .highlight:hover {
+     background-color: #bae7ff;
+   }
+   

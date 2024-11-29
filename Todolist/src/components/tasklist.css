@@ -1,6 +1,11 @@
 .tasklist {
      text-align: left;
      margin-bottom: 20px;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+     position: relative;
      
    }
    
@@ -9,7 +14,7 @@
      align-items: center;
      cursor: pointer;
      font-family: Arial, sans-serif;
-     font-size: 20px;
+     font-size: 18px;
      color: #c5d2e4;
      gap:25px;
      margin-left: 30px;
@@ -55,4 +60,22 @@
    .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
      transform: rotate(45deg) scale(1);
    }
-   
+   .ellipsis{
+
+    font-size: 40px;
+    position: absolute;
+    right: 30px;
+    
+   }
+   .pinimage{
+    position: absolute;
+    left: -1px;
+    width: 20px;
+    height: 30px;
+    transform: rotatez(-40deg);
+   }
+   .menuelipsi{
+    position: absolute;
+    width: 10px;
+    height: 3px;
+   }
