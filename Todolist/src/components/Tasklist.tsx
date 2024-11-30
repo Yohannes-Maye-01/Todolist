@@ -1,10 +1,17 @@
 import "./tasklist.css";
 import pin from "../assets/pin.png";
-import React from "react";
+import React, { useState } from "react";
 import EllipsisMenu from "./EllipsisMenu";
 
 export default function Tasklist() {
+
+
+  
   const [isPined, setPined] = React.useState(false);
+  const [isEllipsOpen, setEllispsOpen]=useState(false)
+
+  
+  
   return (
     <div className="tasklist">
       <div className="pinimage">
@@ -17,12 +24,18 @@ export default function Tasklist() {
         Stylish Checkbox
       </label>
 
-      <div className="ellipsis">
+      <div className="ellipsis" onClick={()=>setEllipsisMenuclicKed(!isEllipsisMenuclicKed)} >
         <i className="fas fa-ellipsis-h"></i>
-      </div>
-      <div className=" menuelipsi">
-        <EllipsisMenu />
-      </div>
+      </div> 
+       
+<div className="menuelipsi">
+{isEllipsisMenuclicKed && <EllipsisMenu/>}
+</div>
+
+
+        
+      
+      
     </div>
   );
 }

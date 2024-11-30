@@ -1,52 +1,41 @@
-/* Context Area Styling */
-.context-area {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     
-   }
-   
-   /* Context Menu Styling */
-   .context-menu {
-     position: absolute;
-     background-color: white;
-     border-radius: 4px;
-     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-     list-style: none;
-     margin: 0;
-     padding: 0;
-     width: 140px;
-     font-family: Arial, sans-serif;
-     font-size: 14px;
-     z-index: 1000;
-     color: #333;
-     border: 1px solid #d9d9d9;
-   }
-   
-   /* Context Menu Item Styling */
-   .context-menu li {
-     padding: 10px 15px;
-     cursor: pointer;
-     border-bottom: 1px solid #f0f0f0;
-   }
-   
-   .context-menu li:last-child {
-     border-bottom: none;
-   }
-   
-   /* Hover Effect */
-   .context-menu li:hover {
-     background-color: #f2f2f2;
-   }
-   
-   /* Highlighted Item (e.g., Copy) */
-   .context-menu .highlight {
-     background-color: #e6f7ff;
-     color: #1890ff;
-     font-weight: bold;
-   }
-   
-   .context-menu .highlight:hover {
-     background-color: #bae7ff;
-   }
-   
+.menuEllipsis{
+  display: flex;
+  flex-direction: column;
+  min-width: 11rem;
+  min-height: 6rem;
+  background-color:#464d57;
+  border-radius: 7px;
+  border: 2px solid #9da5b1;
+padding: 5px 1px 1px 1px;
+ position: absolute;
+ z-index: 10000;
+ 
+}
+.menuEllipsiscontent{
+display: flex;
+flex-direction: row;
+font-size: 1.rem;
+font-size: 18px;
+gap: 6px;
+width: 100%;
+padding: 6px 15px;
+}
+.menuEllipsiscontent:hover{
+  cursor: pointer;
+  transform: scale(1.01);
+  background-color: #717274;
+  width:9rem
+  
+}
+.menuEllipsis::before{
+  content:" " ;
+  position: absolute;
+  top: -0.8rem;
+  right:2rem;
+  width: 20px;
+  height: 20px;
+  background-color: #464d57;
+  border-left:2px solid #9da5b1; 
+  transform: rotate(45deg);
+  border-top:2px solid #9da5b1; 
+}

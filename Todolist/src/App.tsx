@@ -13,6 +13,12 @@ function App() {
         <Slider />
         <InputBar />
         <Tasklist />
+        <Tasklist />
+        <Tasklist />
+        <Tasklist />
+        <Tasklist />
+        <Tasklist />
+        <Tasklist />
       </div>
     </>
   );
