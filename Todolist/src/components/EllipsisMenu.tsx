@@ -1,13 +1,20 @@
 import React from "react";
 import "./EllipsisMenu.css";
 
-export default function EllipsisMenu() {
+export default function EllipsisMenu({
+  setEllispsOpen,
+  item,
+  isPined,
+  onpin,
+  deleteTask,
+}) {
   const content = [
     {
-      text: "Pine on the top",
+      text: isPined ? "unpin" : "Pin on the top",
       id: 1,
       clikhandler: () => {
-        console.log("clicked");
+        setEllispsOpen(null);
+        onpin(item);
       },
       Icon: "fa fa-thumb-tack",
     },
@@ -15,15 +22,17 @@ export default function EllipsisMenu() {
       text: "Delete",
       id: 2,
       clikhandler: () => {
-        console.log("clicked");
+        setEllispsOpen(null);
+        deleteTask(item);
       },
       Icon: "fa fa-trash",
     },
+
     {
       text: "Add to memo",
       id: 3,
       clikhandler: () => {
-        console.log("clicked");
+        setEllispsOpen(null);
       },
       Icon: "fa fa-file",
     },

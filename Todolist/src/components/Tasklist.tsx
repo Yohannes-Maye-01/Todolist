@@ -1,41 +1,67 @@
 import "./tasklist.css";
-import pin from "../assets/pin.png";
-import React, { useState } from "react";
+import image from "../assets/pin.png";
+
 import EllipsisMenu from "./EllipsisMenu";
 
-export default function Tasklist() {
+export default function Tasklist({
+  isEllipsOpen,
+  setEllispsOpen,
+  item,
+  isPined,
+  pin,
+  Unpin,
+  deleteTask,
 
-
-  
-  const [isPined, setPined] = React.useState(false);
-  const [isEllipsOpen, setEllispsOpen]=useState(false)
-
-  
-  
+}) {
   return (
-    <div className="tasklist">
-      <div className="pinimage">
-        {isPined ? <img src={pin} alt="pin" className="pinimage" /> : " "}
+    <>
+      <div className="tasklist">
+        {/* Pin image section */}
+        <div className="pinimage">
+          {isPined ? <img src={image} alt="pin" className="pinimage" /> : " "}
+        </div>
+
+        {/* Stylish checkbox */}
+        <label className="custom-checkbox">
+          <input type="checkbox" />
+          <span className="checkmark"></span>
+          {item.title}
+        </label>
+
+        {/* Ellipsis menu button */}
+        <div
+          className="ellipsis"
+          onClick={
+            (event) => {
+              event.stopPropagation();
+              setEllispsOpen(!isEllipsOpen ? item.id : null);
+            }
+
+            // Toggle ellipsis menu
+          }
+        >
+          <i className="fas fa-ellipsis-h"></i>
+        </div>
+
+        {/* Ellipsis menu */}
+        {isEllipsOpen && (
+          <div
+            className="menuelipsi"
+            onClick={(event) => {
+              event.stopPropagation(); // Prevent menu from closing when clicked
+            }}
+          >
+            <EllipsisMenu
+              setEllispsOpen={setEllispsOpen}
+              item={item}
+              isPined={isPined}
+              onpin={isPined ? Unpin : pin}
+              deleteTask={deleteTask}
+            
+            />
+          </div>
+        )}
       </div>
-
-      <label className="custom-checkbox ">
-        <input type="checkbox" />
-        <span className="checkmark"></span>
-        Stylish Checkbox
-      </label>
-
-      <div className="ellipsis" onClick={()=>setEllipsisMenuclicKed(!isEllipsisMenuclicKed)} >
-        <i className="fas fa-ellipsis-h"></i>
-      </div> 
-       
-<div className="menuelipsi">
-{isEllipsisMenuclicKed && <EllipsisMenu/>}
-</div>
-
-
-        
-      
-      
-    </div>
+    </>
   );
 }
