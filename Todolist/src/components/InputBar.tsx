@@ -1,30 +1,15 @@
 import  { useState } from "react";
 import "./inputbar.css";
 
-export default function InputBar({ setList, list, pinedList }) {
+export default function InputBar({ input,setInput,handleKeyDown ,list,pinedList}) {
 
 
-  const [input, setInput] = useState({
-    id: list.length + 1 , 
-    title: "", 
-  });
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" && input.title.trim()) {
-      
-      setList([ { ...input, id: list.length + 1 },...list]);
-      
-      
-      setInput({
-        id: list.length + 2,
-        title: "",
-      });
-    }
-  };
+ 
 
 
   return (
     <div className="inputBar">
+
       <input
         type="text"
         placeholder="Add a task ..."
@@ -45,7 +30,10 @@ export default function InputBar({ setList, list, pinedList }) {
          
         }}
         onKeyDown={handleKeyDown}
+
+
       />
+
     </div>
   );
 }

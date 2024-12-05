@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./slider.css";
 import {
   Carousel,
@@ -8,40 +8,22 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export default function Slider() {
+
+
+export default function Slider({ days, setApi, handleDayChange }) {
   return (
     <div className="slider">
-      <Carousel className="w-[30%]">
+      <Carousel className="w-[30%]" setApi={setApi}>
         <CarouselContent>
-          <CarouselItem>
-            <h2>monday</h2>
-            <p>augest 12 2023</p>
-          </CarouselItem>
-
-          <CarouselItem>
-            <h2>thuesday</h2>
-            <p>augest 12 2023</p>
-          </CarouselItem>
-          <CarouselItem>
-            <h2>wensday</h2>
-            <p>augest 12 2023</p>
-          </CarouselItem>
-          <CarouselItem>
-            <h2>Thursday</h2>
-            <p>augest 12 2023</p>
-          </CarouselItem>
-          <CarouselItem>
-            <h2>friday</h2>
-            <p>augest 12 2023</p>
-          </CarouselItem>
-          <CarouselItem>
-            <h2>saturday</h2>
-            <p>augest 12 2023</p>
-          </CarouselItem>
-          <CarouselItem>
-            <h2>sunday</h2>
-            <p>augest 12 2023</p>
-          </CarouselItem>
+          {days.map((item, index) => (
+            <CarouselItem key={index}>
+              {/* Update onClick to call handleDayChange with the correct day index */}
+              <div onClick={() => handleDayChange(index + 1)}>
+                <h2>{item.day}</h2>
+                <p>{item.date}</p>
+              </div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
 
         <CarouselPrevious />
@@ -50,3 +32,5 @@ export default function Slider() {
     </div>
   );
 }
+
+

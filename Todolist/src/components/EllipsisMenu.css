@@ -24,7 +24,7 @@ padding: 6px 15px;
   cursor: pointer;
   transform: scale(1.01);
   background-color: #717274;
-  width:9rem
+
   
 }
 .menuEllipsis::before{

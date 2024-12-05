@@ -10,9 +10,9 @@ width: 80%;
 height: 80%;
 font-size: 20px;
 padding-left: 60px;
-background-color: rgb(70, 62, 62);
+background-color: rgba(46, 44, 44, 0.877);
 color: white;
 border-radius: 10px;
-border: none;
+border: 1px rgb(236, 220, 220) solid;
 
 }
