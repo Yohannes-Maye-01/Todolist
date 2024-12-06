@@ -220,6 +220,10 @@ function App() {
           handleKeyDown={handleKeyDown}
           list={list}
           pinedList={pinedList}
+
+
+
+          
         />
 
         <Task
