@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Slider from "./components/Slider";
 import InputBar from "./components/InputBar";
 import Task from "./components/Task";
+import axios from "axios";
+
 import { type CarouselApi } from "@/components/ui/carousel";
 
 import { useEffect, useState } from "react";
@@ -58,6 +60,25 @@ const loadFromStorageWithTimestamp = (key, defaultValue, expirationTime = 24 * 6
 
 
 function App() {
+  useEffect(() => {
+    // Send a GET request to the backend using a relative URL
+    axios.get('/api')
+      .then(response => {
+        postMessage(response.data.message); // Set the response message from the API
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
+  }, []);
+
+
+
+
+
+
+  
+
+
 
   const [listOfTodos, setListOfTodos] = useState(
     loadFromStorageWithTimestamp("listOfTodos", [[], [], [], [], []])
