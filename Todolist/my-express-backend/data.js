@@ -85,6 +85,16 @@ let data = {
      data[day].undoneList = data[day].undoneList.filter((t) => t.id !== taskId);
      return "Task deleted!";
    };
+   // edit task
+   const editTask = (day, taskId, newTask) => {
+     if (!data[day]) return "Invalid day!";
+     const taskIndex = data[day].undoneList.findIndex((t) => t.id === taskId);
+     if (taskIndex !== -1) {
+       data[day].undoneList[taskIndex].task = newTask;
+       return data[day].undoneList[taskIndex];
+     }
+     return "Task not found!";
+   };
    
    // Export functions for backend usage
    export { data, addTask, pinTask, unpinTask, markTaskDone, deleteTask };

@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { data, addTask, pinTask, unpinTask, markTaskDone, deleteTask } from "./data.js";
 
+
 const app = express();
 const port = 5000;
 
@@ -25,6 +26,7 @@ app.post("/api/tasks/:day", (req, res) => {
   if (!data[day]) return res.status(404).json({ message: "Day not found!" });
 
   const newTask = addTask(day, task);
+console.log(newTask);
   res.status(201).json(newTask);
 });
 
@@ -34,9 +36,11 @@ app.put("/api/tasks/:day/pin/:taskId", (req, res) => {
   const pinnedTask = pinTask(day, parseInt(taskId));
 
   if (pinnedTask === "Task not found!") return res.status(404).json({ message: "Task not found!" });
-
+  console.log(pinTask);
   res.json(pinnedTask);
+
 });
+
 
 // ✅ Unpin a task (Move from pinList to unPinList)
 app.put("/api/tasks/:day/unpin/:taskId", (req, res) => {
@@ -44,7 +48,7 @@ app.put("/api/tasks/:day/unpin/:taskId", (req, res) => {
   const unpinnedTask = unpinTask(day, parseInt(taskId));
 
   if (unpinnedTask === "Task not found!") return res.status(404).json({ message: "Task not found!" });
-
+ console.log(unpinTask);
   res.json(unpinnedTask);
 });
 
